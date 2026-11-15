@@ -1,0 +1,167 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Design Tokens — Warm Clinical */
+  --color-paper: #FAF7F2;
+  --color-surface: #FFFFFF;
+  --color-sand-100: #F2EDE4;
+  --color-sand-200: #E6DFD2;
+  --color-ink-900: #16211F;
+  --color-ink-700: #3E4A47;
+  --color-ink-500: #5B6865;
+  --color-ink-400: #7C8985;
+  --color-moss-800: #0A4A3C;
+  --color-moss-700: #0D5C4B;
+  --color-moss-600: #11705B;
+  --color-moss-100: #DDF0E9;
+  --color-moss-50: #EEF8F4;
+  --color-saffron-500: #F2A93B;
+  --color-saffron-100: #FDEFD3;
+  --color-alert-700: #B3261E;
+  --color-alert-100: #FCE8E6;
+  --color-amber-800: #7A4B00;
+  --color-amber-100: #FFF1D6;
+
+  color-scheme: light;
+}
+
+@layer base {
+  * {
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    font-family: 'Figtree', system-ui, -apple-system, sans-serif;
+    color: var(--color-ink-900);
+    background-color: var(--color-paper);
+    text-rendering: optimizeLegibility;
+  }
+
+  body {
+    min-height: 100vh;
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+    background-color: var(--color-paper);
+    color: var(--color-ink-900);
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+
+  /* Typography scale specifications */
+  h1, .font-serif-h1 {
+    font-family: 'Fraunces', Georgia, serif;
+    font-weight: 600;
+    font-size: clamp(2.25rem, 5vw, 3.75rem);
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    color: var(--color-ink-900);
+  }
+
+  h2, .font-serif-h2 {
+    font-family: 'Fraunces', Georgia, serif;
+    font-weight: 600;
+    font-size: clamp(1.75rem, 3.2vw, 2.5rem);
+    line-height: 1.1;
+    letter-spacing: -0.015em;
+    color: var(--color-ink-900);
+  }
+
+  h3, .font-serif-h3 {
+    font-family: 'Figtree', system-ui, sans-serif;
+    font-weight: 600;
+    font-size: 1.25rem;
+    line-height: 1.3;
+    color: var(--color-ink-900);
+  }
+
+  p {
+    max-width: 68ch;
+  }
+
+  /* Accessible inputs — minimum 16px to prevent iOS auto-zoom */
+  input, select, textarea, button {
+    font-family: inherit;
+    font-size: 1rem;
+  }
+
+  /* Focus visible indicator */
+  :focus-visible {
+    outline: 2px solid var(--color-moss-700);
+    outline-offset: 2px;
+  }
+
+  /* Tabular numbers for prices, distances, times */
+  .tabular-nums {
+    font-variant-numeric: tabular-nums;
+  }
+
+  /* Overline style */
+  .overline {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-weight: 600;
+  }
+}
+
+/* Skeleton shimmer animation */
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.animate-shimmer {
+  background: linear-gradient(
+    90deg,
+    #F2EDE4 25%,
+    #FAF7F2 37%,
+    #F2EDE4 63%
+  );
+  background-size: 400% 100%;
+  animation: shimmer 1.2s ease-in-out infinite;
+}
+
+/* Reduced motion compliance */
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Hide scrollbar for horizontal categories while retaining smooth scroll */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Custom Leaflet overrides to fit Warm Clinical aesthetic */
+.leaflet-container {
+  font-family: 'Figtree', system-ui, sans-serif !important;
+  border-radius: 12px;
+}
+.leaflet-popup-content-wrapper {
+  background: #FFFFFF !important;
+  color: #16211F !important;
+  border-radius: 12px !important;
+  box-shadow: 0 8px 24px rgba(22, 33, 31, 0.12) !important;
+  padding: 4px !important;
+  border: 1px solid #E6DFD2 !important;
+}
+.leaflet-popup-tip {
+  background: #FFFFFF !important;
+}

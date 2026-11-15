@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="48" height="48" fill="none">
+  <!-- Soft circular backing with moss tone -->
+  <rect width="48" height="48" rx="14" fill="#EEF8F4" />
+  <!-- Main pad: heart/leaf shaped warm clinical form -->
+  <path d="M24 38C20 38 16 35.5 16 31C16 26.8 20.2 24 24 24C27.8 24 32 26.8 32 31C32 35.5 28 38 24 38Z" fill="#0D5C4B" />
+  <!-- Clinical cross subtle negative cut in central pad -->
+  <path d="M24 28V34M21 31H27" stroke="#FAF7F2" stroke-width="1.8" stroke-linecap="round" />
+  <!-- 4 Toes / Petal cushions -->
+  <ellipse cx="14.5" cy="20.5" rx="3.5" ry="4.5" transform="rotate(-20 14.5 20.5)" fill="#0D5C4B" />
+  <ellipse cx="20.5" cy="15.5" rx="3.5" ry="4.8" transform="rotate(-6 20.5 15.5)" fill="#0D5C4B" />
+  <ellipse cx="27.5" cy="15.5" rx="3.5" ry="4.8" transform="rotate(6 27.5 15.5)" fill="#0D5C4B" />
+  <ellipse cx="33.5" cy="20.5" rx="3.5" ry="4.5" transform="rotate(20 33.5 20.5)" fill="#F2A93B" />
+</svg>
